@@ -1,6 +1,3 @@
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,14 +28,12 @@ class HomeState extends State<Home> {
     });
   }
 
-  void cards(i) {
-    Padding(
+  Widget cards(i) {
+    return Padding(
       padding: EdgeInsets.all(10),
       child: TextButton(
         style: TextButton.styleFrom(
-            backgroundColor: Colors.blue,
-            foregroundColor: Colors.white,
-            textStyle: TextStyle(fontSize: 40)),
+            backgroundColor: Colors.blue, foregroundColor: Colors.white, textStyle: TextStyle(fontSize: 40)),
         onPressed: () => pressing(i),
         child: show[i] ? Text(i.toString()) : Text('0'),
       ),
@@ -48,18 +43,15 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
+      children: [
+        Row(
           children: [
-            Row(
-              children: [
-                cards(0),
-                cards(1),
-                cards(2),
-              ],
-            )
-            ,
-          ]
-          ,
-        )
-    );
+            cards(0),
+            cards(1),
+            cards(2),
+          ],
+        ),
+      ],
+    ));
   }
 }
