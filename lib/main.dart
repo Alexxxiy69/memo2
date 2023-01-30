@@ -34,7 +34,7 @@ class HomeState extends State<Home> {
   void rando() {
     for(int i = 0; i < 3; i++) {
       int ik = Random().nextInt(1) + 2;
-      if(rand.howMuch(ik) < 2) {
+      if(rand.howMuch(ik)  < 2) {
         rand[i] = ik;
       }
     }
